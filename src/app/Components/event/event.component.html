@@ -1,0 +1,17 @@
+<div class="card-content padding-10 height-100">
+    <h3 class="card-header text-algn-center" [ngClass]="{'highlight' : eventToDIsplay.name.toLocaleLowerCase().includes(searchedText)}">{{eventToDIsplay.name}}</h3>
+    <div class="card__details">
+        <p [title]="eventToDIsplay.department"><strong>Department:</strong> {{eventToDIsplay.department}}</p>
+        <p *ngIf="eventToDIsplay.description" [title]="eventToDIsplay.description"><strong>Description:</strong> {{eventToDIsplay.description}}</p>
+        <p><strong>Duration:</strong> {{eventToDIsplay.duration}}Hr</p>
+        <p><strong>Date & Time:</strong> {{eventToDIsplay.date | date:'short'}}</p>
+        <p><strong>Meeting Room:</strong>{{eventToDIsplay.meetingRoom}}</p>
+        <button 
+        class="card__details__btn btn-padding border-rds-5 border-none white-clr green-bg"
+        (click)="updateEvent($event)">
+            Update Details
+        </button>
+    </div>
+</div>
+
+<app-modal *ngIf="openAddUpdateWindow" [eventInfo]="eventToDIsplay" (closeModal)="closeModalWindow($event)"></app-modal>

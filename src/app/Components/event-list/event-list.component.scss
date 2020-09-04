@@ -1,0 +1,29 @@
+.event-container {
+    flex-wrap: wrap;
+    .card {
+        box-shadow: 0 0px 10px 0 rgba(0,0,0,0.2);
+        border-radius: 5px;
+        width: 100%;
+        margin-bottom: 10px;
+        cursor: pointer;
+    }
+}
+
+@media (min-width:550px) {
+    .event-container{
+        .card {
+        width: 48%;
+        }
+    }
+}
+
+@media (min-width:768px) {
+    .container {
+        width: 80%;
+    }
+    .event-container{
+        .card {
+            width: 32% !important;
+        }
+    }
+}

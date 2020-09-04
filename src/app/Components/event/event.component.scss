@@ -1,0 +1,13 @@
+.card-content {
+    position: relative;
+    .card__details {
+        .card__details__btn {
+            margin-top: 5px;
+        }
+        p {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }      
+    }
+}

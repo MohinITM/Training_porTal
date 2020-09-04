@@ -1,0 +1,18 @@
+<section class="dashboard" role="main">
+    <div class="dashboard__addNew display-flx justify-content-sb">
+         <button 
+         class="dashboard__addNew__btn btn-padding white-clr green-bg border-rds-5 border-none"
+         (click)="addUpdateWindow()">Add New Event</button>
+         <div class="search-section">
+             <input 
+             type="text" class="search-text border-cmn border-rds-5" 
+             [(ngModel)]="searchText" placeholder="Search by name"
+             (input)="searchEvent(searchText)">
+        </div>
+    </div>
+    <div class="event-holder">
+        <app-event-list  [searchedText]='sendSearchString' [scheduledEvents]="allCurrentEvents"></app-event-list>
+    </div>
+
+    <app-modal *ngIf="openAddUpdateWindow" [eventInfo]="eventInfo" (closeModal)="closeModalWindow($event)"></app-modal>
+</section>

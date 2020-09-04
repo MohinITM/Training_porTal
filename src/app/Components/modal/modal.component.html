@@ -1,0 +1,72 @@
+<div id="myModal" class="modal" (click)="closeModalOnClick($event)">
+    <div class="modal-content">
+        <div class="modal-header text-algn-center">
+            <span class="close" (click)="closeModalWindow($event)">&times;</span>
+            <h2>{{buttonText}} Event</h2>
+        </div>
+        <div class="modal-body">
+            <form [formGroup]="eventForm">
+                <div class="event-name padding-b">
+                    <label class="display-blk padding-b" for="event-name">Name:<strong
+                            class="mandatory">*</strong></label>
+                    <input class="border-rds-5 border-cmn" formControlName="name" type="text" name="event-name"
+                        [ngClass]="{ 'hasError': fsubmitted && ef.name.errors }" placeholder="Enter the name">
+                    <div *ngIf="fsubmitted && ef.name.errors" class="invalid-class">
+                        <div *ngIf="ef.name.errors.required">Name is required</div>
+                    </div>
+                </div>
+                <div class="event-description padding-b">
+                    <label class="display-blk padding-b" for="event-description">Description:</label>
+                    <input class="border-rds-5 border-cmn" formControlName="description" type="text"
+                        name="event-description" placeholder="Enter the description">
+                </div>
+                <div class="event-departments padding-b">
+                    <label class="display-blk padding-b" for="event-departments">Department:<strong
+                            class="mandatory">*</strong></label>
+                    <input class="border-rds-5 border-cmn" formControlName="department" type="text"
+                        name="event-departments" [ngClass]="{ 'hasError': fsubmitted && ef.department.errors }"
+                        placeholder="Enter the departments">
+                    <div *ngIf="fsubmitted && ef.department.errors" class="invalid-class">
+                        <div *ngIf="ef.department.errors.required">Department is required</div>
+                    </div>
+                </div>
+                <div class="event-duration padding-b">
+                    <label class="display-blk padding-b" for="event-duration">Duration:<strong
+                            class="mandatory">*</strong></label>
+                    <input class="border-rds-5 border-cmn" formControlName="duration" type="text" name="event-duration"
+                        [ngClass]="{ 'hasError': fsubmitted && ef.duration.errors }" placeholder="Enter the duration">
+                    <div *ngIf="fsubmitted && ef.duration.errors" class="invalid-class">
+                        <div *ngIf="ef.duration.errors.required">Duration is required</div>
+                        <div *ngIf="ef.duration.errors.pattern">Duration should be a number</div>
+                    </div>
+                </div>
+                <div class="event-date padding-b">
+                    <label class="display-blk padding-b" for="event-date">Date and Time:<strong
+                            class="mandatory">*</strong></label>
+                    <input class="border-rds-5 border-cmn" formControlName="date" type="datetime-local"
+                        name="event-date" [ngClass]="{ 'hasError': fsubmitted && ef.date.errors }"
+                        placeholder="Enter the date">
+                    <div *ngIf="fsubmitted && ef.date.errors" class="invalid-class">
+                        <div *ngIf="ef.date.errors.required">Date is required</div>
+                    </div>
+                </div>
+                <div class="event-meetingRoom padding-b">
+                    <label class="display-blk padding-b" for="event-meetingRoom">Meeting Room:<strong
+                            class="mandatory">*</strong></label>
+                    <input class="border-rds-5 border-cmn" formControlName="meetingRoom" type="text"
+                        name="event-meetingRoom" [ngClass]="{ 'hasError': fsubmitted && ef.meetingRoom.errors }"
+                        placeholder="Enter the meetingRoom">
+                    <div *ngIf="fsubmitted && ef.meetingRoom.errors" class="invalid-class">
+                        <div *ngIf="ef.meetingRoom.errors.required">Meeting room is required</div>
+                        <div *ngIf="ef.meetingRoom.errors.pattern">Meeting room should be a number</div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer text-algn-center padding-b">
+            <button class="btn-padding white-clr green-bg border-rds-5 border-none"
+                (click)="submitForm($event)">{{buttonText}} Event</button>
+        </div>
+    </div>
+
+</div>

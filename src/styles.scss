@@ -1,0 +1,101 @@
+/* You can add global styles to this file, and also import other style files */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.container {
+    width: 100%;
+}
+
+/*Common css classes starts*/
+.white-clr {
+    color: white;
+}
+.margin-auto {
+    margin: auto;
+}
+
+.display-flex {
+    display: flex;    
+}
+
+.align-items {
+    align-items: center;
+}
+
+.justify-content {
+    justify-content: center
+}
+
+.padding-10 {
+    padding: 10px;
+}
+
+.text-algn-center {
+    text-align: center
+}
+
+.green-bg {
+    background-color: #44C08D;
+}
+
+.btn-padding {
+    padding: 10px;
+}
+
+.border-none {
+    border: none;
+}
+
+.border-rds-5 {
+    border-radius: 5px;
+}
+
+.highlight {
+    background-color: yellow;
+}
+
+.display-flx {
+    display: flex;
+}
+
+.justify-content-sb {
+    justify-content: space-between;
+}
+
+.display-blk {
+    display: block;
+}
+
+.padding-b {
+    padding-bottom: 10px;
+}
+
+.border-cmn {
+    border: 1px solid black;
+}
+
+.margin-5 {
+    margin: 5px;
+}
+
+.height-100 {
+    height: 100%;
+}
+
+/*Common css classes ends*/
+
+@media (min-width:600px) {
+    .container {
+        .justify-content {
+            justify-content: flex-start;
+        }
+    }
+}
+
+@media (min-width:768px) {
+    .container {
+        width: 80%;
+    }
+}
